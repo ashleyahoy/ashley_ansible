@@ -3,7 +3,7 @@
   hosts: all
   tasks:
     - name: Ubuntu apt update
-      apt:
+      ansible.builtin.apt:
         state: latest
         name: '*'
         update-cache: true

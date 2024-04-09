@@ -1,5 +1,5 @@
 - name: Wait for linux systems to become reachable
-  wait_for_connection:
+  ansible.builtin.wait_for_connection:
     delay: 10
     timeout: 60
     connect_timeout: 5
