@@ -1,0 +1,7 @@
+skip_list:
+  - latest[git]
+  - package-latest
+  - yaml[commas]
+  - yaml[line-length]
+  - fqcn
+  - role-name

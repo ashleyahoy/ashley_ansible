@@ -1,1 +1,8 @@
+# vim
+
 *.swp
+
+# Vagrant
+
+.vagrant
+vagrant/*/*.log
