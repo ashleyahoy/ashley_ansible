@@ -1,0 +1,6 @@
+---
+- name: Test Ansible's ability to communicate with linux nodes via wait_for_connection
+  hosts: all
+  roles:
+    - test-connectivity
+...

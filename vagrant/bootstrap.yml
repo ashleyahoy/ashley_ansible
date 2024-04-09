@@ -1,0 +1,10 @@
+- name: Bootstrap a Vagrant
+  become: true
+  hosts: all
+  tasks:
+    - name: Ubuntu apt update
+      apt:
+        state: latest
+        name: '*'
+        update-cache: true
+      when: ansible_distribution == "Ubuntu"
