@@ -15,3 +15,10 @@
         name: '*'
         update_cache: true
       when: ansible_distribution == "Rocky"
+
+    - name: Centos yum update
+      ansible.builtin.yum:
+        state: latest
+        name: '*'
+        update_cache: true
+      when: ansible_distribution == "CentOS"
