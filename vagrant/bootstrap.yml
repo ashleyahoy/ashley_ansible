@@ -8,3 +8,10 @@
         name: '*'
         update-cache: true
       when: ansible_distribution == "Ubuntu"
+
+    - name: Rocky yum update
+      ansible.builtin.yum:
+        state: latest
+        name: '*'
+        update_cache: true
+      when: ansible_distribution == "Rocky"
