@@ -1,0 +1,6 @@
+---
+- name: Get ansible distribution
+  hosts: all
+  roles:
+    - get-distribution
+...
