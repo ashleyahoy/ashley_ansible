@@ -9,16 +9,9 @@
         update-cache: true
       when: ansible_distribution == "Ubuntu"
 
-    - name: Rocky yum update
-      ansible.builtin.yum:
+    - name: Rocky and CentOS yum update
+      ansible.builtin.package:
         state: latest
         name: '*'
         update_cache: true
-      when: ansible_distribution == "Rocky"
-
-    - name: Centos yum update
-      ansible.builtin.yum:
-        state: latest
-        name: '*'
-        update_cache: true
-      when: ansible_distribution == "CentOS"
+      when: ansible_distribution in ['Rocky', 'CentOS']
