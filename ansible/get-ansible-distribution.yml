@@ -1,0 +1,6 @@
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: Show ansible distribution
+      debug:
+        msg: "Ansible distribution is: {{ ansible_distribution }}"
