@@ -7,7 +7,7 @@
         state: latest
         name: '*'
         update-cache: true
-      when: ansible_distribution == "Ubuntu"
+      when: ansible_distribution in ["Ubuntu", "Debian"]
 
     - name: Rocky and CentOS yum update
       ansible.builtin.package:
