@@ -1,0 +1,7 @@
+---
+- name: Test ansible connectivity and get distribution
+  hosts: all
+  roles:
+    - test-connectivity
+    - get-distribution
+...
