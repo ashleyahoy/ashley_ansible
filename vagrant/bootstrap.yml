@@ -4,7 +4,7 @@
   tasks:
 
     - name: Alpine apk update
-      ansible.builtin.apk:
+      community.general.apk:
         available: true
         upgrade: true
         update_cache: true
