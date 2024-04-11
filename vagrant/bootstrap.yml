@@ -3,12 +3,19 @@
   hosts: all
   tasks:
 
+    - name: Alpine apk update
+      ansible.builtin.apk:
+        available: true
+        upgrade: true
+        update_cache: true
+      when: ansible_distribution == 'Alpine'
+
     - name: Ubuntu and Debian apt update
       ansible.builtin.apt:
         state: latest
         name: '*'
         update-cache: true
-      when: ansible_distribution in ["Ubuntu", "Debian"]
+      when: ansible_distribution in ['Ubuntu', 'Debian']
 
     - name: Rocky, CentOS, OracleLinux and Amazon yum update
       ansible.builtin.package:
