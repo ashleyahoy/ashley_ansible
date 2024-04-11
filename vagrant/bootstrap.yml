@@ -2,16 +2,16 @@
   become: true
   hosts: all
   tasks:
-    - name: Ubuntu apt update
+    - name: Ubuntu and Debian apt update
       ansible.builtin.apt:
         state: latest
         name: '*'
         update-cache: true
       when: ansible_distribution in ["Ubuntu", "Debian"]
 
-    - name: Rocky and CentOS yum update
+    - name: Rocky, CentOS and Amazon yum update
       ansible.builtin.package:
         state: latest
         name: '*'
         update_cache: true
-      when: ansible_distribution in ['Rocky', 'CentOS']
+      when: ansible_distribution in ['Rocky', 'CentOS', 'Amazon']
