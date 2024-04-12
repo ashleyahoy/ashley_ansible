@@ -5,3 +5,5 @@ skip_list:
   - yaml[line-length]
   - fqcn
   - role-name
+
+offline: false
