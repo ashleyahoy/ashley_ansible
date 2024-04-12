@@ -1,5 +1,5 @@
 - name: Install baseline applications
-  apk:
+  community.general.apk:
     name:
       - nmap
       - vim
