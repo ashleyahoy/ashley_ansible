@@ -5,6 +5,3 @@ skip_list:
   - yaml[line-length]
   - fqcn
   - role-name
-
-ignore_rules:
-  - 106
