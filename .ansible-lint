@@ -5,5 +5,4 @@ skip_list:
   - yaml[line-length]
   - fqcn
   - role-name
-  - MP0001 # Module/action 'apk' could not be resolved
-  - MP0002 # Module/action 'community.general.apk'' could not be resolved
+  - apk
