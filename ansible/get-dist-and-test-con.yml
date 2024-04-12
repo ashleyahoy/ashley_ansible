@@ -1,6 +1,7 @@
 ---
 - name: Test ansible connectivity and get distribution
   hosts: all
+  become: true
   roles:
     - test-connectivity
     - get-distribution
