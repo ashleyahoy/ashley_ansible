@@ -1,0 +1,8 @@
+- name: Install baseline applications
+  apk:
+    name:
+      - nmap
+      - vim
+      - git
+      - sshpass
+    state: present

@@ -1,0 +1,7 @@
+---
+- name: Install baseline applications
+  hosts: all
+  become: true
+  roles:
+    - baseline-applications
+...
