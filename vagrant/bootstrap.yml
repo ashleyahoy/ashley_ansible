@@ -4,21 +4,21 @@
   tasks:
 
     - name: Alpine apk update
-      community.general.apk:
+      apk:
         available: true
         upgrade: true
         update_cache: true
       when: ansible_distribution == 'Alpine'
 
     - name: Ubuntu and Debian apt update
-      ansible.builtin.apt:
+      apt:
         state: latest
         name: '*'
         update-cache: true
       when: ansible_distribution in ['Ubuntu', 'Debian']
 
     - name: Rocky, CentOS, OracleLinux and Amazon yum update
-      ansible.builtin.package:
+      package:
         state: latest
         name: '*'
         update_cache: true
