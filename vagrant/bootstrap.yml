@@ -4,7 +4,7 @@
   tasks:
 
     - name: Alpine apk update
-      apk:
+      community.general.apk:
         available: true
         upgrade: true
         update_cache: true
