@@ -5,4 +5,6 @@ skip_list:
   - yaml[line-length]
   - fqcn
   - role-name
-  - community.general.apk
+
+ignore_rules:
+  - 106
