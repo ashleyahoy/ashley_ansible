@@ -13,4 +13,4 @@ jobs:
           fetch-depth: 0 # needed for progressive mode to work
 
       - name: Run ansible-lint
-        uses: ansible/ansible-lint@v6.11.0 # replace `main` with any valid ref, or tags like `v6` because of FQCN issue
+        uses: ansible/ansible-lint-action@v6.11.0 # replace `main` with any valid ref, or tags like `v6` because of FQCN issue
