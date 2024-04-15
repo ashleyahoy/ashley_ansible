@@ -29,4 +29,4 @@
         state: latest
         name: '*'
         update_cache: true
-      when: ansible_distribution in ['Rocky', 'CentOS', 'Amazon', 'OracleLinux']
+      when: ansible_distribution in ['Rocky', 'CentOS', 'Amazon', 'OracleLinux', 'AlmaLinux']
