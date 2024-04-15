@@ -10,12 +10,12 @@
         update_cache: true
       when: ansible_distribution == 'Alpine'
 
-    - name: Ubuntu and Debian apt update
+    - name: Ubuntu, Debian and Linux Mint apt update
       apt:
         state: latest
         name: '*'
         update-cache: true
-      when: ansible_distribution in ['Ubuntu', 'Debian']
+      when: ansible_distribution in ['Ubuntu', 'Debian', 'Linux Mint']
 
     - name: Rocky, CentOS, OracleLinux and Amazon yum update
       package:
