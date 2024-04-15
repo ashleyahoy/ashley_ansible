@@ -10,6 +10,13 @@
         update_cache: true
       when: ansible_distribution == 'Alpine'
 
+    - name: openSUSE zypper update
+      community.general.zypper:
+        state: latest
+        name: '*'
+        update_cache: true
+      when: ansible_distribution == 'openSUSE Tumbleweed'
+
     - name: Ubuntu, Debian and Linux Mint apt update
       apt:
         state: latest
