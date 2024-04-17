@@ -1,0 +1,7 @@
+---
+- name: Put basic scripts on hosts
+  hosts: all
+  become: true
+  roles:
+    - basic-scripts
+...
