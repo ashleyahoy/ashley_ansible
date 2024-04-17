@@ -6,9 +6,9 @@
     group: vagrant
     mode: '0755'
 
-- name: Create capture_input.sh from .j2 template
-  template:
-    src: templates/capture_input.sh.j2
+- name: Copy capture_input.sh from files
+  copy:
+    src: "{{ capture_input_script }}"
     dest: /home/vagrant/scripts/capture_input.sh
     owner: vagrant
     group: vagrant
