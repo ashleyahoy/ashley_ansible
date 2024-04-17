@@ -6,6 +6,14 @@
     group: vagrant
     mode: '0755'
 
+- name: Create capture_input.sh from .j2 template
+  template:
+    src: templates/capture_input.sh.j2
+    dest: /home/vagrant/scripts/capture_input.sh
+    owner: vagrant
+    group: vagrant
+    mode: '0775'
+
 - name: Create my_script.sh from .j2 template
   template:
     src: templates/my_script.sh.j2

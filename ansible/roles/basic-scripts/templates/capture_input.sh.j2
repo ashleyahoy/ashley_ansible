@@ -12,7 +12,7 @@ activity[3]="PS5"
 activity[6]="Blackjack"
 
 # Store the length of the array
-array_length=${#activity[0]}
+array_length=${#activity[@]}
 
 # Randomly select an index from 0 to array_length
 index=$(($RANDOM % $array_length))
