@@ -1,0 +1,39 @@
+- name: Create /home/vagrant/scripts folder
+  file:
+    path: /home/vagrant/scripts
+    state: directory
+    owner: vagrant
+    group: vagrant
+    mode: '0755'
+
+- name: Create my_script.sh from .j2 template
+  template:
+    src: templates/my_script.sh.j2
+    dest: /home/vagrant/scripts/my_script.sh
+    owner: vagrant
+    group: vagrant
+    mode: '0775'
+
+- name: Create hello_loop.sh from .j2 template
+  template:
+    src: templates/hello_loop.sh.j2
+    dest: /home/vagrant/scripts/hello_loop.sh
+    owner: vagrant
+    group: vagrant
+    mode: '0775'
+
+- name: Create if_statement.sh from .j2 template
+  template:
+    src: templates/if_statement.sh.j2
+    dest: /home/vagrant/scripts/if_statement.sh
+    owner: vagrant
+    group: vagrant
+    mode: '0775'
+
+- name: Create basic_function.sh from .j2 template
+  template:
+    src: templates/basic_function.sh.j2
+    dest: /home/vagrant/scripts/basic_function.sh
+    owner: vagrant
+    group: vagrant
+    mode: '0775'
