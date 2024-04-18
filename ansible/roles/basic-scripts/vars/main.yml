@@ -1,1 +1,5 @@
 capture_input_script: "files/basic-scripts/capture_input.sh"
+my_script: "files/basic-scripts/my_script.sh"
+hello_loop_script: "files/basic-scripts/hello_loop.sh"
+if_statement_script: "files/basic-scripts/if_statement.sh"
+basic_function_script: "files/basic-scripts/if_statement.sh"
