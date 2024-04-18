@@ -14,33 +14,33 @@
     group: vagrant
     mode: '0775'
 
-- name: Create my_script.sh from .j2 template
-  template:
-    src: templates/my_script.sh.j2
+- name: Copy my_script.sh from files
+  copy:
+    src: "{{ my_script }}"
     dest: /home/vagrant/scripts/my_script.sh
     owner: vagrant
     group: vagrant
     mode: '0775'
 
-- name: Create hello_loop.sh from .j2 template
-  template:
-    src: templates/hello_loop.sh.j2
+- name: Copy hello_loop.sh from files
+  copy:
+    src: "{{ hello_loop_script }}"
     dest: /home/vagrant/scripts/hello_loop.sh
     owner: vagrant
     group: vagrant
     mode: '0775'
 
-- name: Create if_statement.sh from .j2 template
-  template:
-    src: templates/if_statement.sh.j2
+- name: Copy if_statement.sh from files
+  copy:
+    src: "{{ if_statement_script }}"
     dest: /home/vagrant/scripts/if_statement.sh
     owner: vagrant
     group: vagrant
     mode: '0775'
 
-- name: Create basic_function.sh from .j2 template
-  template:
-    src: templates/basic_function.sh.j2
+- name: Copy basic_function.sh from files
+  copy:
+    src: "{{ basic_function_script }}"
     dest: /home/vagrant/scripts/basic_function.sh
     owner: vagrant
     group: vagrant
