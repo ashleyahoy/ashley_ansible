@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 echo "Today is " `date`
 
 echo -e "\nEnter the path to directory"

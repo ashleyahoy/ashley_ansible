@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -e
+
 i=1
 while [[ $i -le 10 ]] ; do
    echo "$i"
