@@ -4,7 +4,7 @@ set -e
 
 # Greet user and request their name
 echo "The activity generator"
-read -p "What is your name? " name
+read -r -p "What is your name? " name
 
 # Create an array of activities
 activity[0]="Football"
@@ -17,8 +17,8 @@ activity[6]="Blackjack"
 array_length=${#activity[@]}
 
 # Randomly select an index from 0 to array_length
-index=$(($RANDOM % $array_length))
+index=$((RANDOM % array_length))
 
 # Invite the user to join you participate in an activity
-echo "Hi" $name, "would you like to play" ${activity[$index]}"?"
-read -p "Answer: " answer
+echo "Hi" "$name", "would you like to play" ${activity[$index]}"?"
+read -r -p "Answer: "
