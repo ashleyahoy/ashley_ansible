@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x -e
+set -e
 
 fruit="apple"
 
