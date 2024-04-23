@@ -7,7 +7,7 @@ trap bashtrap INT
 # bash prints message => Executing bash trap subroutine !
 bashtrap()
 {
-    echo "CTRL+C Detencted !...executing bash trap !"
+    echo "CTRL+C Detected !...executing bash trap !"
 }
 # for loop from 1/10 to 10/10
 for a in $(seq 1 10); do
