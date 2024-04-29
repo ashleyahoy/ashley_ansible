@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 # Define bash local variable
 # This variable is global and can be used anywhere in this bash script
 VAR="global variable"
