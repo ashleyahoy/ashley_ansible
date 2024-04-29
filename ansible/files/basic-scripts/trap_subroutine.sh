@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 # bash trap command
 trap bashtrap INT
 # bash clear screen command
