@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 # Declare an array with four elements
 ARRAY=( 'Debian Linux' 'Redhat Linux' Ubuntu AlpineLinux )
 # get number of elements in the array
