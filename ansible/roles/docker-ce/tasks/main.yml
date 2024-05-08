@@ -1,0 +1,54 @@
+- name: Install required apt packages
+  apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - aptitude
+    state: latest
+    update_cache: true
+  when: ansible_distribution in ['Ubuntu', 'Debian', 'Linux Mint']
+
+- name: Install required yum packages
+  package:
+    state: latest
+    name:
+      - dnf-plugins-core
+    update_cache: true
+  when: ansible_distribution in ['Rocky', 'CentOS', 'Amazon', 'OracleLinux', 'AlmaLinux', 'Fedora']
+
+- name: Add Docker GPG apt key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+  when: ansible_distribution in ['Ubuntu', 'Debian', 'Linux Mint']
+
+- name: Add Docker repo via apt
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu focal stable
+    state: present
+  when: ansible_distribution in ['Ubuntu', 'Debian', 'Linux Mint']
+
+- name: Add Docker repo via yum
+  yum_repository:
+    name: docker-ce
+    description: docker-ce
+    baseurl: https://download.docker.com/linux/fedora/docker-ce.repo
+  when: ansible_distribution in ['Rocky', 'CentOS', 'Amazon', 'OracleLinux', 'AlmaLinux', 'Fedora']
+
+- name: Update apt and install docker-ce
+  apt:
+    name: docker-ce
+    state: latest
+    update_cache: true
+  ignore_errors: "{{ ansible_check_mode }}"
+  when: ansible_distribution in ['Ubuntu', 'Debian', 'Linux Mint']
+
+- name: Update yum and install docker-ce
+  yum:
+    name: docker-ce
+    state: latest
+    update_cache: true
+  ignore_errors: "{{ ansible_check_mode }}"
+  when: ansible_distribution in ['Rocky', 'CentOS', 'Amazon', 'OracleLinux', 'AlmaLinux', 'Fedora']
