@@ -1,0 +1,7 @@
+---
+- name: Install docker-ce
+  hosts: all
+  become: true
+  roles:
+    - docker-ce
+...
