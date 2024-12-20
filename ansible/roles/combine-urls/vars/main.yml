@@ -1,0 +1,6 @@
+upstream_urls:
+  - { name: "service1", url: "https://www.google.com/" }
+  - { name: "service2", url: "https://msn.com/" }
+  - { name: "service3", url: "https://espn.com/" }
+
+nginx_port: 80
