@@ -1,0 +1,35 @@
+server {
+    listen {{ nginx_port }};
+    server_name localhost;
+
+    # Pass traffic to the combined URL
+    location /combined {
+        default_type text/html;
+
+        # Proxy to each upstream and combine the results
+        subrequest_output_buffer_size 10m;
+
+        set $resp "";
+
+        {% for upstream in upstream_urls %}
+        proxy_pass {{ upstream.url }};
+        body_filter_by_lua_block {
+            local resp = ngx.arg[1]
+            if resp then
+                ngx.ctx.buffered = (ngx.ctx.buffered or "") .. resp
+                if ngx.arg[2] then
+                    ngx.arg[1] = ngx.ctx.buffered
+                else
+                    ngx.arg[1] = nil
+                end
+            end
+        }
+        {% endfor %}
+    }
+
+    # Serve static files for the main page
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+}

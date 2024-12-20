@@ -1,0 +1,7 @@
+---
+- name: Combine disparate URLs to one
+  hosts: all
+  become: true
+  roles:
+    - combine-urls
+...
